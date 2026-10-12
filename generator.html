@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Link Generator</title>
+    <link rel="stylesheet" href="generator.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="generator-container">
+        <h1>Create a Custom Card</h1>
+        <p class="subtitle">Fill out the details to generate your shareable link.</p>
+
+        <form id="card-form">
+            <div class="form-group">
+                <label for="to">To:</label>
+                <input type="text" id="to" placeholder="e.g., My Special Someone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="occasion">Occasion:</label>
+                <input type="text" id="occasion" placeholder="e.g., Just thinking of you" required>
+            </div>
+
+            <div class="form-group">
+                <label for="msg">Message:</label>
+                <span class="hint">Use the pipe character <strong>|</strong> to create a line break.</span>
+                <textarea id="msg" rows="4" placeholder="A little garden blooming just for you,|to remind you how deeply loved you are." required></textarea>
+            </div>
+
+            <button type="submit" class="generate-btn">Generate Link</button>
+        </form>
+
+        <!-- Hidden by default, shows up after clicking generate -->
+        <div id="result" class="hidden">
+            <h3>Your Link is Ready!</h3>
+            <input type="text" id="generated-url" readonly>
+
+            <div class="action-buttons">
+                <button id="copy-btn" class="copy-btn">Copy Link</button>
+                <a id="preview-link" href="#" target="_blank" class="preview-btn">Preview Card</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="generator.js"></script>
+</body>
+</html>
